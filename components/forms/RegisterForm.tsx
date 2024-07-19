@@ -112,28 +112,66 @@ const RegisterForm = ({ user }: { user: User }) => {
             control={form.control}
             name="gender"
             label="Gender"
-            renderSkeleton={(field) => <FormControl>
+            renderSkeleton={(field) => (
+              <FormControl>
+                <RadioGroup
+                  className="flex h-11 gap-6 xl:justify-between"
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  {GenderOptions.map((option) => (
+                    <div key={option} className="radio-group">
+                      <RadioGroupItem value={option} id={option} />
+                      <Label htmlFor={option} className="cursor-pointer">
+                        {option}
+                      </Label>
+                    </div>
+                  ))}
+                </RadioGroup>
+              </FormControl>
+            )}
+          />
+        </div>
 
-              <RadioGroup className="flex h-11 gap-6 xl:justify-between" onValueChange={field.onChange} defaultValue={field.value}>
+        {/* <section className="space-y-6">
+            <div className="mb-9 space-y-1">
+              <h2 className="sub-header">Medical Information</h2>
+            </div>
+          </section> */}
 
-              {GenderOptions.map((option) =>
-              (
-              
-              <div key={option} className="radio-group">
+        <div className="flex flex-col gap-6 xl:flex-row">
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="address"
+            label="Address"
+            placeholder="100 Chittenden Avenue"
+          />
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="occupation"
+            label="Occupation"
+            placeholder="Software Engineer"
+          />
+        </div>
 
-                <RadioGroupItem value={option} id={option}/>
-                <Label htmlFor={option} className="cursor-pointer">
-                  {option}
-                </Label>
+        <div className="flex flex-col gap-6 xl:flex-row">
 
-
-              </div>
-              ))}
-
-              </RadioGroup>
-
-              
-            </FormControl>}
+        <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="emergencyContactName"
+            label="Emergency Contact Name"
+            placeholder="Guardian's name"
+            
+          />
+          <CustomFormField
+            fieldType={FormFieldType.PHONE_INPUT}
+            control={form.control}
+            name="emergencyContactNumber"
+            label="Emergency Contact Number"
+            placeholder=""
           />
         </div>
 
