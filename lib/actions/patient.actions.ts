@@ -32,4 +32,8 @@ export const getUser = async (userId: string) => {
   } catch (error) {
     console.log(error);
   }
-};
+}
+
+
+
+
