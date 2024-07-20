@@ -169,44 +169,68 @@ const RegisterForm = ({ user }: { user: User }) => {
           />
         </div>
 
-          <section className="space-y-6">
-            <div className="mb-9 space-y-1">
-              <h2 className="sub-header">Medical Information</h2>
-            </div>
-          </section>
+        <section className="space-y-6">
+          <div className="mb-9 space-y-1">
+            <h2 className="sub-header">Medical Information</h2>
+          </div>
+        </section>
 
-          <CustomFormField
-            fieldType={FormFieldType.SELECT}
-            control={form.control}
-            name="primaryPhysician"
-            label="Primary Physician"
-            placeholder="Select a physician"
-            >
-
-              {Doctors.map((doctor) =>
-              
-              <SelectItem key={doctor.name} value =
-              {doctor.name}>
-
+        <CustomFormField
+          fieldType={FormFieldType.SELECT}
+          control={form.control}
+          name="primaryPhysician"
+          label="Primary Physician"
+          placeholder="Select a physician"
+        >
+          {Doctors.map((doctor) => (
+            <SelectItem key={doctor.name} value={doctor.name}>
               <div className="flex cursor-pointer items-center gap-2">
-
                 <Image
-                src={doctor.image}
-                width={32}
-                height={32}
-                alt={doctor.name}
-                className="rounded-full border border-dark-500"
+                  src={doctor.image}
+                  width={32}
+                  height={32}
+                  alt={doctor.name}
+                  className="rounded-full border border-dark-500"
                 />
                 <p>{doctor.name}</p>
-
               </div>
-              </SelectItem>
+            </SelectItem>
+          ))}
+        </CustomFormField>
 
+        <div className="flex flex-col gap-6 xl:flex-row">
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="insuranceProvider"
+            label="Insurance Provider"
+            placeholder="Buckeye Health Care"
+          />
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="insurancePolicyNumber"
+            label="InsuranceNumber"
+            placeholder="..."
+          />
+        </div>
 
-              )}
-            </CustomFormField>
-          
-        
+        <div className="flex flex-col gap-6 xl:flex-row">
+          <CustomFormField
+            fieldType={FormFieldType.TEXTAREA}
+            control={form.control}
+            name="allergies"
+            label="Allergies (if any)"
+            placeholder="Peanuts, Penicillin, Pollen"
+          />
+          <CustomFormField
+            fieldType={FormFieldType.TEXTAREA}
+            control={form.control}
+            name="currentMedication"
+            label="Current Medication (if any)"
+            placeholder="Ibuprofen 200mg"
+          />
+        </div>
 
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
       </form>
