@@ -27,7 +27,7 @@ export default async function NewAppointment({params: { userId }}: SearchParamPr
 
           />
 
-          <p className="justify-items-end text-dark-600 xl:text-left">
+          <p className="justify-items-end text-dark-600 xl:text-left py-6">
             © 2024 CarePulse
           </p>
         </div>
@@ -45,4 +45,3 @@ export default async function NewAppointment({params: { userId }}: SearchParamPr
 }
 
 
-// 2:45:18
