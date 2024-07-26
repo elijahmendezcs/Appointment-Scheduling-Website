@@ -15,17 +15,16 @@ import { Appointment } from "@/types/appwrite.types";
 // Finish implementing the schedule and cancel components.
 
 export const AppointmentModal = ({
+  type,
   patientId,
   userId,
   appointment,
-  type,
 }: {
-  patientId: string;
-  userId: string;
-  appointment?: Appointment;
-  type: "schedule" | "cancel";
-  title: string;
-  description: string;
+  type: 'schedule' | 'cancel'
+  patientId: string,
+  userId: string,
+  appointment?: Appointment
+  
 }) => {
   const [open, setOpen] = useState(false);
 
