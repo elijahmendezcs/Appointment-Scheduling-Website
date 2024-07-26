@@ -93,4 +93,4 @@ export const columns: ColumnDef<Appointment>[] = [
   },
 ];
 
-// commit before I start for the day.
+// commit for error
