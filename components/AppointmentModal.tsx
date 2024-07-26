@@ -53,11 +53,6 @@ export const AppointmentModal = ({
         type={type}
         appointment={appointment}
         setOpen={setOpen}
-        
-        
-        
-        
-        
         />
 
         
