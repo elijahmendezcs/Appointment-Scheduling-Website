@@ -1,6 +1,5 @@
 "use client";
 
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -76,7 +75,6 @@ const RegisterForm = ({ user }: { user: User }) => {
     setIsLoading(false);
   }
 
-  /* Shadcn import for username form */
   return (
     <Form {...form}>
       <form

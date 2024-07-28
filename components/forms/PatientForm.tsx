@@ -62,8 +62,8 @@ const PatientForm = () => {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex-1">
         <section className="mb-12 space-y-4">
-          <h1 className="header">Hi There! 👋</h1>
-          <p className="text-dark-700">Schedule your first appointment</p>
+          <h1 className="header">Welcome! 🌰</h1>
+          <p className="text-dark-700">Welcome to Buck-I-Tutor. Lets schedule your first appointment.</p>
         </section>
 
         <CustomFormField
@@ -71,7 +71,7 @@ const PatientForm = () => {
           control={form.control}
           name="name"
           label="Full name"
-          placeholder="John Doe"
+          placeholder="Brutus Buckeye"
           iconSrc="/assets/icons/user.svg"
           iconAlt="user"
         />
@@ -81,7 +81,7 @@ const PatientForm = () => {
           control={form.control}
           name="email"
           label="Email address"
-          placeholder="johndoe@buckeyemail.osu.edu"
+          placeholder="brutusbuckeye@buckeyemail.osu.edu"
           iconSrc="/assets/icons/email.svg"
           iconAlt="email"
         />
